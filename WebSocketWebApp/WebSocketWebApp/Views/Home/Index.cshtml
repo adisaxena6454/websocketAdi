@@ -1,0 +1,59 @@
+﻿
+<script language="JavaScript" type="text/javascript" src="/js/jquery-1.2.6.min.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/jquery-ui-personalized-1.5.2.packed.js"></script>
+<script language="JavaScript" type="text/javascript" src="/js/sprinkle.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js" integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="~/Scripts/WebSocketCall.js" type="text/javascript"></script>
+<head>
+    
+    <link rel="stylesheet" href="~/Content/Main.css" type="text/css" />
+</head>
+@if (Session["UserName"] != null)
+{
+    @Scripts.Render("~/Scripts/WebSocketCall.js")
+    <div class="jumbotron">
+        <h1>
+
+            Welcome @Session["UserName"].ToString()
+            @Html.ValidationSummary(true)
+        </h1>
+
+    </div>
+
+    <div class="row">
+        <div class="divmessage" id="messages">
+            <table class="table table-bordered table-striped mb-0">
+                <thead>
+                    <tr>
+                        <th>
+                            InstrumentIdentifier
+                        </th>
+                        <th>
+                            LastTradePrice
+                        </th>
+                        <th>
+                            PriceChange
+                        </th>
+                        <th>
+                            PriceChangePercentage
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tblBykeLists">
+                    <tr>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <button type="button" id="btStart" class="button" onclick="getmessage('start')">GetData</button>
+        <button type="button" id="btStop" hidden onclick="haltFunction()">Clear</button>
+    </div>
+
+}
+
+
+
+

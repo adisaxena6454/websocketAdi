@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<p>
+    Outline on what we will be creating, we will be creating a backend with the following features:
+    1. Auth (register and login using JWT)
+    2. Profile (update profile)
+    3. Socket (pull data and forward to the client)
+    Step 1: we will register the user using name, email, phone, and image (image will be uploaded)
+    Step 2: we will login the user using JWT token so once we hit login we should get back a jwt token with 1d
+    validity.
+    Step 3: There should be a route to edit profile details (update all the information like name, email, phone,
+    and image)
+    This part covers basic Rest API
+    Now using the link you need to connect to web socket -> http://13.232.18.39/
+    The socket replicates the data during live market hours of stock market but our socket returns data all the
+    time and some random data in the json format just as the stock market.
+    Step 1: Create a client to connect to this web socket (http://13.232.18.39/) and listen on the "dashboard" event
+    Step 2: Now create a socket server which connects to the frontend and forward it from the socket client.
+    So basically we are forwarding data from one socket to the other.
+    We are receiving data from the http://13.232.18.39/ and forwarding to the frontend client.
+    Please use the MVC pattern and follow standard coding principles as we will check for code quality and
+    styling of coding and file structure etc.
+    Please upload all the code to github and share the link in the mail.
+</p>
